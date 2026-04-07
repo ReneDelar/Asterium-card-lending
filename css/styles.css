@@ -861,6 +861,12 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 
+/* Center the section header in security */
+.s-security .sec__header {
+  align-items: center;
+  text-align: center;
+}
+
 .security__grid {
   display: flex;
   gap: 9px;
@@ -995,9 +1001,10 @@ a { text-decoration: none; color: inherit; }
   border-radius: 40px 40px 0 0;
   overflow: hidden;
   margin-top: var(--gap-sec);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 101;   /* sits 1 level above the fixed navbar (z-index:100) */
 }
 
 .s-cta {
@@ -1028,9 +1035,9 @@ a { text-decoration: none; color: inherit; }
   margin-top: -19px;
 }
 
-/* Footer */
+/* Footer — 100vh */
 .footer {
-  flex: 1;
+  min-height: 100vh;
   padding: 0 20px 17px;
   display: flex;
   flex-direction: column;
