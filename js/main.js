@@ -327,24 +327,32 @@ document.addEventListener('DOMContentLoaded', () => {
      SCROLL REVEAL
   ───────────────────────────── */
   const srTargets = document.querySelectorAll(
-    '.bcard, .sec-card, .faq-item, .step__pill, .feat__panel'
+    '.bcard, .sec-card, .faq-item, .step__pill, .feat__panel, ' +
+    '.sec__header, .feat__header, .cards__name, .sec__title--center, ' +
+    '.cards__fan, .cards__nav-row, .cards__cta, .cta__inner'
   );
 
-  srTargets.forEach((el, i) => {
+  // Group siblings so stagger resets per section
+  srTargets.forEach(el => {
     el.classList.add('sr-hidden');
-    el.style.transitionDelay = `${(i % 5) * 0.08}s`;
+    // Stagger based on position among siblings of same parent
+    const siblings = Array.from(el.parentElement.children).filter(c => c.classList.contains('sr-hidden'));
+    const idx = siblings.indexOf(el);
+    el.style.transitionDelay = `${Math.min(idx, 4) * 0.1}s`;
   });
 
-  const observer = new IntersectionObserver(entries => {
+  const srObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('sr-visible');
-        observer.unobserve(e.target);
+        srObserver.unobserve(e.target);
+        // Clear delay after animation so hover timing is instant
+        setTimeout(() => { e.target.style.transitionDelay = ''; }, 900);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
-  srTargets.forEach(el => observer.observe(el));
+  srTargets.forEach(el => srObserver.observe(el));
 
 
   /* ─────────────────────────────

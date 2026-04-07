@@ -105,9 +105,9 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
-  transition: opacity 0.2s;
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.25), opacity 0.2s;
 }
-.cta-pill:hover { opacity: 0.88; }
+.cta-pill:hover { transform: scale(1.05); opacity: 0.92; }
 .cta-pill--dark { background: var(--black); color: var(--white); }
 .cta-pill--lime { background: var(--lime); color: var(--black); }
 .cta-pill__icon { width: 32px; height: 32px; flex-shrink: 0; }
@@ -223,9 +223,9 @@ a { text-decoration: none; color: inherit; }
   font-size: 14px;
   color: var(--black);
   white-space: nowrap;
-  transition: opacity 0.2s;
+  transition: transform 0.28s cubic-bezier(.22,.68,0,1.25), opacity 0.2s;
 }
-.header__cta:hover { opacity: 0.85; }
+.header__cta:hover { transform: scale(1.06); opacity: 0.9; }
 
 /* Burger */
 .burger {
@@ -373,6 +373,12 @@ a { text-decoration: none; color: inherit; }
   position: relative;
   overflow: hidden;
   min-height: 208px;
+  transition: transform 0.38s cubic-bezier(.22,.68,0,1.2),
+              box-shadow 0.38s ease;
+}
+.bcard:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.11);
 }
 .bcard--gray { background: var(--gray-bg); }
 .bcard--lime { background: var(--lime); }
@@ -714,9 +720,23 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.25s ease,
+              transform 0.35s cubic-bezier(.22,.68,0,1.2),
+              box-shadow 0.35s ease;
 }
-.step__pill:hover { background: #e8e8e8; }
+.step__pill:hover {
+  background: #e4e4e4;
+  transform: scale(1.025);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+}
+.step__pill.active {
+  background: rgba(7,7,8,0.06);
+  box-shadow: inset 0 0 0 1.5px rgba(7,7,8,0.14);
+}
+.step__pill.active .step__pill-badge {
+  background: var(--black);
+  color: var(--white);
+}
 
 .step__pill-badge {
   display: block;
@@ -729,6 +749,7 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
   padding: 7px 0;
   width: 100%;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 
@@ -850,6 +871,11 @@ a { text-decoration: none; color: inherit; }
 
 .cards__cta { margin-top: 30px; }
 
+/* Cards fan — entrance */
+.cards__fan {
+  transition: transform 0.4s cubic-bezier(.22,.68,0,1.1), opacity 0.4s ease;
+}
+
 
 /* ═══════════════════════════════════════════
    SECURITY  (white bg, gray cards)
@@ -883,6 +909,12 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   gap: 10px;
   padding: 16px;
+  transition: transform 0.38s cubic-bezier(.22,.68,0,1.2),
+              box-shadow 0.38s ease;
+}
+.sec-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.08);
 }
 
 .sec-card__imgwrap {
@@ -946,6 +978,12 @@ a { text-decoration: none; color: inherit; }
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--white);
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.2),
+              box-shadow 0.3s ease;
+}
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
 }
 
 .faq-q {
@@ -1147,14 +1185,66 @@ a { text-decoration: none; color: inherit; }
 
 
 /* ═══════════════════════════════════════════
+   ANIMATIONS — keyframes
+═══════════════════════════════════════════ */
+@keyframes aFadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes aFadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes aPop {
+  from { opacity: 0; transform: scale(0.82); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes aFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─ Hero entrance (fires on page load) ─ */
+.hero__eyebrow {
+  opacity: 0;
+  animation: aFadeDown 0.52s cubic-bezier(.22,.68,0,1.1) 0.1s forwards;
+}
+.hero__title {
+  opacity: 0;
+  animation: aFadeUp 0.72s cubic-bezier(.22,.68,0,1.1) 0.26s forwards;
+}
+.hero__content .cta-pill {
+  opacity: 0;
+  animation: aPop 0.55s cubic-bezier(.22,.68,0,1.3) 0.5s forwards;
+}
+.marquee {
+  opacity: 0;
+  animation: aFadeUp 0.5s ease 0.62s forwards;
+}
+
+/* ─ Header logo slide in ─ */
+.header__logo {
+  animation: aFadeIn 0.4s ease 0.05s both;
+}
+.header__nav {
+  animation: aFadeIn 0.4s ease 0.15s both;
+}
+.header__actions {
+  animation: aFadeIn 0.4s ease 0.2s both;
+}
+
+/* ═══════════════════════════════════════════
    SCROLL REVEAL
 ═══════════════════════════════════════════ */
 .sr-hidden {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transform: translateY(30px);
+  transition: opacity 0.65s cubic-bezier(.22,.68,0,1),
+              transform 0.65s cubic-bezier(.22,.68,0,1);
 }
-.sr-visible { opacity: 1 !important; transform: none !important; }
+/* sr-visible: same specificity as sr-hidden but declared later → wins cascade.
+   No !important on transform so hover selectors (higher specificity) can override. */
+.sr-visible { opacity: 1; transform: none; }
 
 
 /* ═══════════════════════════════════════════
