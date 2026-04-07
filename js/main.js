@@ -63,24 +63,107 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────
-     FEATURE CAROUSEL (dots only)
+     FEATURE CAROUSEL (content swap)
   ───────────────────────────── */
-  const featDots = document.querySelectorAll('#featDots .feat__dot');
-  const featPrev = document.getElementById('featPrev');
-  const featNext = document.getElementById('featNext');
+  const featDots       = document.querySelectorAll('#featDots .feat__dot');
+  const featPrev       = document.getElementById('featPrev');
+  const featNext       = document.getElementById('featNext');
+  const featCenterImg  = document.getElementById('featCenterImg');
+  const featCenterLabel = document.getElementById('featCenterLabel');
+  const featCenterSub  = document.getElementById('featCenterSub');
+  const featLeftImg    = document.getElementById('featLeftImg');
+  const featLeftLabel  = document.getElementById('featLeftLabel');
+  const featLeftSub    = document.getElementById('featLeftSub');
+  const featRightImg   = document.getElementById('featRightImg');
+  const featRightLabel = document.getElementById('featRightLabel');
+  const featRightSub   = document.getElementById('featRightSub');
 
-  if (featPrev) {
+  const featSlides = [
+    {
+      centerImg:   'https://www.figma.com/api/mcp/asset/eb3c43a5-1b55-4702-9dc0-ee89728ded25',
+      centerLabel: 'Магазины, кафе, онлайн',
+      centerSub:   'Как обычной картой — везде где принимают Visa, Mastercard и HUMO',
+      leftImg:     'https://www.figma.com/api/mcp/asset/06922cf4-0533-46a5-afc3-da2415f094bd',
+      leftLabel:   'Visa и Mastercard — по всему миру',
+      leftSub:     'HUMO — для ежедневных трат в Узбекистане',
+      rightImg:    'https://www.figma.com/api/mcp/asset/7d93bd77-8370-4b32-876f-85400b42fc62',
+      rightLabel:  'Цифровая карта — за минуты',
+      rightSub:    'Физическая — по желанию, доставка на адрес',
+    },
+    {
+      centerImg:   'https://www.figma.com/api/mcp/asset/06922cf4-0533-46a5-afc3-da2415f094bd',
+      centerLabel: 'Visa и Mastercard — по всему миру',
+      centerSub:   'Платите в любой стране — конвертация происходит автоматически',
+      leftImg:     'https://www.figma.com/api/mcp/asset/7d93bd77-8370-4b32-876f-85400b42fc62',
+      leftLabel:   'Цифровая карта — за минуты',
+      leftSub:     'Физическая — по желанию, доставка на адрес',
+      rightImg:    'https://www.figma.com/api/mcp/asset/eb3c43a5-1b55-4702-9dc0-ee89728ded25',
+      rightLabel:  'Магазины, кафе, онлайн',
+      rightSub:    'Как обычной картой — везде где принимают Visa, Mastercard и HUMO',
+    },
+    {
+      centerImg:   'https://www.figma.com/api/mcp/asset/7d93bd77-8370-4b32-876f-85400b42fc62',
+      centerLabel: 'Цифровая карта — за минуты',
+      centerSub:   'Физическая — по желанию, доставка на адрес',
+      leftImg:     'https://www.figma.com/api/mcp/asset/eb3c43a5-1b55-4702-9dc0-ee89728ded25',
+      leftLabel:   'Магазины, кафе, онлайн',
+      leftSub:     'Как обычной картой — везде где принимают Visa, Mastercard и HUMO',
+      rightImg:    'https://www.figma.com/api/mcp/asset/06922cf4-0533-46a5-afc3-da2415f094bd',
+      rightLabel:  'Visa и Mastercard — по всему миру',
+      rightSub:    'HUMO — для ежедневных трат в Узбекистане',
+    },
+  ];
+
+  if (featPrev && featCenterImg) {
     let featCur = 0;
-    const featTotal = featDots.length;
+    const featTotal = featSlides.length;
 
     const featGoto = idx => {
       featCur = (idx + featTotal) % featTotal;
+
+      // Fade out center image
+      featCenterImg.style.opacity = '0';
+
+      setTimeout(() => {
+        const s = featSlides[featCur];
+
+        // Update center panel
+        featCenterImg.src   = s.centerImg;
+        featCenterLabel.textContent = s.centerLabel;
+        featCenterSub.textContent   = s.centerSub;
+
+        // Update side panels
+        featLeftImg.src   = s.leftImg;
+        featLeftLabel.textContent = s.leftLabel;
+        featLeftSub.textContent   = s.leftSub;
+        featRightImg.src  = s.rightImg;
+        featRightLabel.textContent = s.rightLabel;
+        featRightSub.textContent   = s.rightSub;
+
+        featCenterImg.style.opacity = '1';
+      }, 300);
+
+      // Update dots
       featDots.forEach((d, i) => d.classList.toggle('feat__dot--on', i === featCur));
     };
 
     featPrev.addEventListener('click', () => featGoto(featCur - 1));
     featNext.addEventListener('click', () => featGoto(featCur + 1));
     featDots.forEach((d, i) => d.addEventListener('click', () => featGoto(i)));
+
+    // Touch swipe on feature panels
+    const featSection = document.querySelector('.s-feat');
+    if (featSection) {
+      let fStartX = 0;
+      featSection.addEventListener('touchstart', e => { fStartX = e.touches[0].clientX; }, { passive: true });
+      featSection.addEventListener('touchend', e => {
+        const dx = fStartX - e.changedTouches[0].clientX;
+        if (Math.abs(dx) > 40) {
+          if (dx > 0) featGoto(featCur + 1);
+          else        featGoto(featCur - 1);
+        }
+      });
+    }
   }
 
 
@@ -169,9 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Re-assign classes based on cardCur
         const imgs = [
-          'https://www.figma.com/api/mcp/asset/bf1264f3-e264-4058-be96-da7c27304514',
-          'https://www.figma.com/api/mcp/asset/39cd5125-99e8-4800-aae9-693270e32fd2',
-          'https://www.figma.com/api/mcp/asset/70faa126-7093-4785-a744-77e536390af9',
+          'https://www.figma.com/api/mcp/asset/70faa126-7093-4785-a744-77e536390af9', // 0 — HUMO Daily
+          'https://www.figma.com/api/mcp/asset/39cd5125-99e8-4800-aae9-693270e32fd2', // 1 — Asterium Crypto
+          'https://www.figma.com/api/mcp/asset/bf1264f3-e264-4058-be96-da7c27304514', // 2 — Visa Platinum
         ];
 
         cards[0].className = 'crd crd--left';
