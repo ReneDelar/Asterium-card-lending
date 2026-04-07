@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asterium — Криптокарта для реального мира</title>
+  <meta name="description" content="Asterium — используйте криптоактивы через привычные карты. Безопасно, быстро, удобно." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/>
+          <path d="M16 10L24 26H8L16 10Z" fill="#0D0D0D"/>
+        </svg>
+        <span class="logo-text">ASTERIUM</span>
+      </a>
+
+      <nav class="header__nav" id="main-nav">
+        <a href="#features" class="header__nav-link">О сервисе</a>
+        <a href="#card" class="header__nav-link">Карта</a>
+        <a href="#security" class="header__nav-link">Безопасность</a>
+        <a href="#faq" class="header__nav-link">FAQ</a>
+      </nav>
+
+      <a href="#cta" class="btn btn--primary header__cta">Начать</a>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="badge-dot"></span>
+          Доступно сейчас
+        </div>
+        <h1 class="hero__title">
+          Используйте<br />
+          <span class="text-accent">криптоактивы</span><br />
+          через привычные карты
+        </h1>
+        <p class="hero__subtitle">
+          Asterium — первый сервис, позволяющий тратить криптовалюту в любой точке мира через обычные банковские карты. Без конвертации. Без ожиданий.
+        </p>
+        <div class="hero__actions">
+          <a href="#cta" class="btn btn--primary btn--lg">Получить карту</a>
+          <a href="#features" class="btn btn--outline btn--lg">Узнать больше</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__phone-wrap">
+          <div class="hero__phone">
+            <div class="phone-screen">
+              <div class="phone-screen__header">
+                <span class="phone-screen__logo">A</span>
+                <span class="phone-screen__balance">$12,480.00</span>
+              </div>
+              <div class="phone-screen__card">
+                <div class="card-mockup">
+                  <div class="card-mockup__chip"></div>
+                  <div class="card-mockup__logo">ASTERIUM</div>
+                  <div class="card-mockup__number">•••• •••• •••• 4821</div>
+                  <div class="card-mockup__bottom">
+                    <span>Держатель</span>
+                    <span>12/27</span>
+                  </div>
+                </div>
+              </div>
+              <div class="phone-screen__stats">
+                <div class="phone-stat">
+                  <span class="phone-stat__label">BTC</span>
+                  <span class="phone-stat__val">+2.4%</span>
+                </div>
+                <div class="phone-stat">
+                  <span class="phone-stat__label">ETH</span>
+                  <span class="phone-stat__val">+1.8%</span>
+                </div>
+                <div class="phone-stat">
+                  <span class="phone-stat__label">USDT</span>
+                  <span class="phone-stat__val">0.0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats">
+    <div class="container stats__inner">
+      <div class="stats__item">
+        <span class="stats__number">50 000+</span>
+        <span class="stats__label">Пользователей</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">120+</span>
+        <span class="stats__label">Стран</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">$2 млрд+</span>
+        <span class="stats__label">Транзакций</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">3 года</span>
+        <span class="stats__label">На рынке</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container features__inner">
+      <div class="features__visual">
+        <div class="features__phones">
+          <div class="features__phone features__phone--back">
+            <div class="phone-screen phone-screen--dark">
+              <div class="phone-screen__tx-list">
+                <div class="tx-item">
+                  <span class="tx-item__icon">☕</span>
+                  <span class="tx-item__name">Кофейня</span>
+                  <span class="tx-item__amount">−$4.20</span>
+                </div>
+                <div class="tx-item">
+                  <span class="tx-item__icon">🛒</span>
+                  <span class="tx-item__name">Супермаркет</span>
+                  <span class="tx-item__amount">−$38.50</span>
+                </div>
+                <div class="tx-item">
+                  <span class="tx-item__icon">✈️</span>
+                  <span class="tx-item__name">Авиабилеты</span>
+                  <span class="tx-item__amount">−$320.00</span>
+                </div>
+                <div class="tx-item">
+                  <span class="tx-item__icon">💰</span>
+                  <span class="tx-item__name">Пополнение</span>
+                  <span class="tx-item__amount tx-item__amount--pos">+$1,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="features__phone features__phone--front">
+            <div class="phone-screen">
+              <div class="phone-screen__qr-title">Получить оплату</div>
+              <div class="phone-screen__qr-box">
+                <div class="qr-placeholder">
+                  <div class="qr-inner"></div>
+                </div>
+              </div>
+              <div class="phone-screen__qr-addr">0x4F2...a91B</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features__content">
+        <p class="section-label">О сервисе</p>
+        <h2 class="section-title">Используйте свои криптоактивы</h2>
+        <p class="section-desc">
+          Asterium даёт возможность тратить криптовалюту так же легко, как обычные деньги — в магазинах, ресторанах и онлайн по всему миру.
+        </p>
+        <ul class="features__list">
+          <li class="features__list-item">
+            <span class="features__list-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Мгновенные транзакции</strong>
+              <p>Платежи подтверждаются за секунды без задержек</p>
+            </div>
+          </li>
+          <li class="features__list-item">
+            <span class="features__list-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Поддержка 50+ криптовалют</strong>
+              <p>BTC, ETH, USDT, SOL и многие другие</p>
+            </div>
+          </li>
+          <li class="features__list-item">
+            <span class="features__list-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Без скрытых комиссий</strong>
+              <p>Прозрачные тарифы, никаких сюрпризов</p>
+            </div>
+          </li>
+          <li class="features__list-item">
+            <span class="features__list-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Cashback в крипте</strong>
+              <p>Получайте до 2% кэшбэк с каждой покупки</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEPS ===== -->
+  <section class="steps" id="steps">
+    <div class="container">
+      <p class="section-label section-label--light">Как начать</p>
+      <h2 class="section-title section-title--light">Пройдите путь</h2>
+      <p class="section-desc section-desc--light">
+        Три простых шага — и вы уже тратите крипту в реальном мире
+      </p>
+
+      <div class="steps__grid">
+        <div class="steps__item">
+          <div class="steps__num">01</div>
+          <div class="steps__phone-wrap">
+            <div class="steps__phone">
+              <div class="phone-screen phone-screen--dark">
+                <div class="step-screen step-screen--register">
+                  <div class="step-screen__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="7" stroke="#C8FF00" stroke-width="2"/><path d="M6 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/></svg>
+                  </div>
+                  <p>Создайте аккаунт<br/>за 2 минуты</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="steps__title">Регистрация</h3>
+          <p class="steps__desc">Создайте аккаунт по email или телефону. Верификация KYC — быстро и безопасно.</p>
+        </div>
+
+        <div class="steps__item">
+          <div class="steps__num">02</div>
+          <div class="steps__phone-wrap">
+            <div class="steps__phone">
+              <div class="phone-screen phone-screen--dark">
+                <div class="step-screen step-screen--deposit">
+                  <div class="step-screen__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="20" rx="3" stroke="#C8FF00" stroke-width="2"/><path d="M6 16h28" stroke="#C8FF00" stroke-width="2"/><circle cx="12" cy="24" r="2" fill="#C8FF00"/></svg>
+                  </div>
+                  <p>Пополните<br/>кошелёк</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="steps__title">Пополнение</h3>
+          <p class="steps__desc">Переведите криптовалюту на ваш кошелёк Asterium. Поддерживаем все основные сети.</p>
+        </div>
+
+        <div class="steps__item">
+          <div class="steps__num">03</div>
+          <div class="steps__phone-wrap">
+            <div class="steps__phone">
+              <div class="phone-screen phone-screen--dark">
+                <div class="step-screen step-screen--pay">
+                  <div class="step-screen__icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M10 20h20M24 14l6 6-6 6" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <p>Платите<br/>везде</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="steps__title">Оплата</h3>
+          <p class="steps__desc">Используйте виртуальную или физическую карту для оплаты в любой точке мира.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARD SHOWCASE ===== -->
+  <section class="card-section" id="card">
+    <div class="container">
+      <div class="card-section__head">
+        <div>
+          <p class="section-label">Продукт</p>
+          <h2 class="section-title">Криптокарта под<br />ваши задачи</h2>
+        </div>
+        <div class="card-section__nav">
+          <button class="carousel-btn carousel-btn--prev" id="card-prev" aria-label="Назад">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel-btn carousel-btn--next" id="card-next" aria-label="Вперёд">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel" id="card-carousel">
+        <div class="carousel__track" id="card-track">
+
+          <div class="carousel__slide">
+            <div class="card-showcase">
+              <div class="card-3d card-3d--black">
+                <div class="card-3d__chip"></div>
+                <div class="card-3d__logo">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
+                  ASTERIUM
+                </div>
+                <div class="card-3d__number">•••• •••• •••• 4821</div>
+                <div class="card-3d__bottom">
+                  <span>VIRTUAL</span>
+                  <span>VISA</span>
+                </div>
+              </div>
+              <div class="card-showcase__info">
+                <h3>Виртуальная карта</h3>
+                <p>Мгновенный выпуск. Используйте для онлайн-покупок уже через минуту после регистрации.</p>
+                <ul class="card-showcase__features">
+                  <li>Бесплатный выпуск</li>
+                  <li>Доступна сразу</li>
+                  <li>Apple Pay / Google Pay</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="card-showcase">
+              <div class="card-3d card-3d--gradient">
+                <div class="card-3d__chip"></div>
+                <div class="card-3d__logo">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
+                  ASTERIUM
+                </div>
+                <div class="card-3d__number">•••• •••• •••• 9912</div>
+                <div class="card-3d__bottom">
+                  <span>PREMIUM</span>
+                  <span>MASTERCARD</span>
+                </div>
+              </div>
+              <div class="card-showcase__info">
+                <h3>Премиум карта</h3>
+                <p>Физическая металлическая карта с кэшбэком до 2% и приоритетной поддержкой 24/7.</p>
+                <ul class="card-showcase__features">
+                  <li>Металл, доставка 5 дней</li>
+                  <li>2% кэшбэк в крипте</li>
+                  <li>Приоритетная поддержка</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="card-showcase">
+              <div class="card-3d card-3d--dark">
+                <div class="card-3d__chip"></div>
+                <div class="card-3d__logo">
+                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
+                  ASTERIUM
+                </div>
+                <div class="card-3d__number">•••• •••• •••• 3307</div>
+                <div class="card-3d__bottom">
+                  <span>BUSINESS</span>
+                  <span>VISA</span>
+                </div>
+              </div>
+              <div class="card-showcase__info">
+                <h3>Бизнес карта</h3>
+                <p>Корпоративное решение: несколько карт, лимиты, отчётность и интеграция с бухгалтерией.</p>
+                <ul class="card-showcase__features">
+                  <li>До 20 карт на команду</li>
+                  <li>Расширенная аналитика</li>
+                  <li>Экспорт в 1С/Excel</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel__dots" id="card-dots">
+        <button class="carousel__dot active" data-index="0"></button>
+        <button class="carousel__dot" data-index="1"></button>
+        <button class="carousel__dot" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECURITY ===== -->
+  <section class="security" id="security">
+    <div class="container">
+      <div class="security__head">
+        <p class="section-label">Защита</p>
+        <h2 class="section-title">Безопасность</h2>
+        <p class="section-desc">
+          Ваши средства под многоуровневой защитой. Мы используем лучшие в индустрии технологии безопасности.
+        </p>
+      </div>
+
+      <div class="security__grid">
+        <div class="security__item">
+          <div class="security__icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
+              <path d="M28 12L14 18v10c0 8.284 5.946 16.03 14 18 8.054-1.97 14-9.716 14-18V18L28 12z" stroke="#C8FF00" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M22 28l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="security__title">Шифрование данных</h3>
+          <p class="security__desc">AES-256 шифрование для всех персональных данных и транзакций</p>
+        </div>
+
+        <div class="security__item">
+          <div class="security__icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
+              <circle cx="28" cy="22" r="7" stroke="#C8FF00" stroke-width="2"/>
+              <path d="M14 42c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="38" cy="18" r="4" fill="#C8FF00"/>
+              <path d="M36 18l1.5 1.5L40 16" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="security__title">Биометрия и 2FA</h3>
+          <p class="security__desc">Face ID, Touch ID и двухфакторная аутентификация для каждого входа</p>
+        </div>
+
+        <div class="security__item">
+          <div class="security__icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
+              <rect x="14" y="20" width="28" height="20" rx="3" stroke="#C8FF00" stroke-width="2"/>
+              <path d="M14 28h28" stroke="#C8FF00" stroke-width="2"/>
+              <rect x="18" y="32" width="6" height="4" rx="1" fill="#C8FF00"/>
+              <path d="M28 14v6M22 14v3M34 14v3" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="security__title">Холодное хранение</h3>
+          <p class="security__desc">95% активов хранятся в cold storage, недоступном для взлома онлайн</p>
+        </div>
+
+        <div class="security__item">
+          <div class="security__icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
+              <path d="M22 28c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z" stroke="#C8FF00" stroke-width="2"/>
+              <path d="M14 28c0-7.732 6.268-14 14-14s14 6.268 14 14-6.268 14-14 14S14 35.732 14 28z" stroke="#C8FF00" stroke-width="2" stroke-dasharray="4 3"/>
+              <circle cx="28" cy="28" r="2" fill="#C8FF00"/>
+            </svg>
+          </div>
+          <h3 class="security__title">Мониторинг 24/7</h3>
+          <p class="security__desc">Системы обнаружения мошенничества отслеживают транзакции в реальном времени</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq__inner">
+        <div class="faq__head">
+          <p class="section-label">Поддержка</p>
+          <h2 class="section-title">Частые вопросы</h2>
+          <p class="section-desc">Не нашли ответ? Напишите нам в поддержку</p>
+          <a href="mailto:support@asterium.io" class="btn btn--outline">Написать в поддержку</a>
+        </div>
+
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">
+              Как быстро я могу получить карту?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>Виртуальная карта доступна сразу после прохождения верификации — это занимает около 2-5 минут. Физическая карта доставляется в течение 5–7 рабочих дней по всему миру.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Какие криптовалюты поддерживаются?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>Мы поддерживаем более 50 криптовалют, включая Bitcoin (BTC), Ethereum (ETH), USDT, USDC, Solana (SOL), BNB, и многие другие. Полный список доступен в приложении.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Безопасно ли хранить крипту в Asterium?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>Да. Мы используем институциональный уровень безопасности: 95% активов хранятся в cold storage, все данные шифруются по стандарту AES-256, а каждая операция проходит многоуровневую проверку.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Какие комиссии взимает Asterium?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>Комиссия за покупки по карте составляет 0.5% в рамках базового тарифа. Пополнение счёта — от 0% (зависит от сети). Детальные тарифы доступны на странице Pricing.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              В каких странах доступен сервис?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>Asterium доступен в 120+ странах мира. Карта принимается везде, где работает Visa или Mastercard. Список стран, где доступна регистрация, постоянно расширяется.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question">
+              Как работает кэшбэк?
+              <span class="faq__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="faq__answer">
+              <p>При каждой покупке по карте начисляется кэшбэк в крипте — от 0.5% до 2% в зависимости от тарифа. Кэшбэк поступает на ваш кошелёк Asterium автоматически.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container cta-section__inner">
+      <div class="cta-section__glow cta-section__glow--left"></div>
+      <div class="cta-section__glow cta-section__glow--right"></div>
+      <div class="cta-section__content">
+        <h2 class="cta-section__title">
+          Начните пользоваться<br />
+          криптоактивами уже сегодня
+        </h2>
+        <p class="cta-section__desc">
+          Присоединяйтесь к 50 000+ пользователям, которые уже платят криптой как обычными деньгами
+        </p>
+        <div class="cta-section__actions">
+          <a href="#" class="btn btn--primary btn--lg">Получить карту бесплатно</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="header__logo">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#0D0D0D"/></svg>
+            <span class="logo-text">ASTERIUM</span>
+          </a>
+          <p class="footer__brand-desc">
+            Первый сервис криптокарт, позволяющий тратить цифровые активы в реальном мире
+          </p>
+        </div>
+
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Продукт</h4>
+            <ul>
+              <li><a href="#">Виртуальная карта</a></li>
+              <li><a href="#">Физическая карта</a></li>
+              <li><a href="#">Бизнес решения</a></li>
+              <li><a href="#">Тарифы</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Компания</h4>
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Карьера</a></li>
+              <li><a href="#">Партнёрам</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Поддержка</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Документация</a></li>
+              <li><a href="#">Статус системы</a></li>
+              <li><a href="mailto:support@asterium.io">Написать нам</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__logo-big">
+        <span>ASTERIUM</span>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2024 Asterium. Все права защищены.</span>
+        <div class="footer__legal">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Условия использования</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
