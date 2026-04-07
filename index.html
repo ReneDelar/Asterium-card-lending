@@ -1,638 +1,468 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asterium — Криптокарта для реального мира</title>
-  <meta name="description" content="Asterium — используйте криптоактивы через привычные карты. Безопасно, быстро, удобно." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asterium — Криптокарта</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header class="header" id="header">
-    <div class="container header__inner">
+  <!-- ═══════════════════════════════
+       HEADER
+  ═══════════════════════════════ -->
+  <header id="header">
+    <div class="header__inner">
+
       <a href="#" class="header__logo">
-        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/>
-          <path d="M16 10L24 26H8L16 10Z" fill="#0D0D0D"/>
-        </svg>
-        <span class="logo-text">ASTERIUM</span>
+        <img src="https://www.figma.com/api/mcp/asset/fead3968-2c8a-4836-9df4-e591313b8e00" alt="ASTERIUM" width="160" height="17">
       </a>
 
-      <nav class="header__nav" id="main-nav">
-        <a href="#features" class="header__nav-link">О сервисе</a>
-        <a href="#card" class="header__nav-link">Карта</a>
-        <a href="#security" class="header__nav-link">Безопасность</a>
-        <a href="#faq" class="header__nav-link">FAQ</a>
+      <nav class="header__nav" id="headerNav">
+        <a href="#about">О нас</a>
+        <a href="#benefits">Преимущества</a>
+        <a href="#bonus">Бонус</a>
+        <a href="#s-cards">Карты</a>
+        <a href="#security">Безопасность</a>
       </nav>
 
-      <a href="#cta" class="btn btn--primary header__cta">Начать</a>
+      <div class="header__actions">
+        <div class="lang" id="langWrap">
+          <button class="lang__btn" id="langBtn" aria-expanded="false">
+            <img src="https://www.figma.com/api/mcp/asset/a21212e8-dc6e-4b80-afe3-95123b493492" alt="" width="23" height="23">
+            <span id="langCurrent">РУ</span>
+            <img src="https://www.figma.com/api/mcp/asset/8100b580-fe0f-47d1-b5ec-0f56db55fe1d" alt="" class="lang__arrow" width="5" height="3">
+          </button>
+          <div class="lang__drop" id="langDrop">
+            <div class="lang__opt lang__opt--active" data-lang="РУ">Ру</div>
+            <div class="lang__opt" data-lang="UZ">Uz</div>
+            <div class="lang__opt" data-lang="ENG">Eng</div>
+          </div>
+        </div>
 
-      <button class="burger" id="burger" aria-label="Меню">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="header__cta">
+          <span>Заказать карту</span>
+          <img src="https://www.figma.com/api/mcp/asset/38e83f38-890d-4bd7-b0d2-ec72a467285b" alt="" width="10" height="10">
+        </button>
+
+        <button class="burger" id="burger" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <div class="hero__badge">
-          <span class="badge-dot"></span>
-          Доступно сейчас
-        </div>
-        <h1 class="hero__title">
-          Используйте<br />
-          <span class="text-accent">криптоактивы</span><br />
-          через привычные карты
-        </h1>
-        <p class="hero__subtitle">
-          Asterium — первый сервис, позволяющий тратить криптовалюту в любой точке мира через обычные банковские карты. Без конвертации. Без ожиданий.
-        </p>
-        <div class="hero__actions">
-          <a href="#cta" class="btn btn--primary btn--lg">Получить карту</a>
-          <a href="#features" class="btn btn--outline btn--lg">Узнать больше</a>
-        </div>
-      </div>
-      <div class="hero__visual">
-        <div class="hero__phone-wrap">
-          <div class="hero__phone">
-            <div class="phone-screen">
-              <div class="phone-screen__header">
-                <span class="phone-screen__logo">A</span>
-                <span class="phone-screen__balance">$12,480.00</span>
-              </div>
-              <div class="phone-screen__card">
-                <div class="card-mockup">
-                  <div class="card-mockup__chip"></div>
-                  <div class="card-mockup__logo">ASTERIUM</div>
-                  <div class="card-mockup__number">•••• •••• •••• 4821</div>
-                  <div class="card-mockup__bottom">
-                    <span>Держатель</span>
-                    <span>12/27</span>
-                  </div>
-                </div>
-              </div>
-              <div class="phone-screen__stats">
-                <div class="phone-stat">
-                  <span class="phone-stat__label">BTC</span>
-                  <span class="phone-stat__val">+2.4%</span>
-                </div>
-                <div class="phone-stat">
-                  <span class="phone-stat__label">ETH</span>
-                  <span class="phone-stat__val">+1.8%</span>
-                </div>
-                <div class="phone-stat">
-                  <span class="phone-stat__label">USDT</span>
-                  <span class="phone-stat__val">0.0%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hero__glow"></div>
-        </div>
+
+  <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+  <section class="s-hero" id="about">
+    <div class="hero__content">
+      <p class="hero__eyebrow">HUMO / VISA / Mastercard</p>
+      <h1 class="hero__title">
+        <span class="hero__title--dark">Используйте<br>криптоактивы, </span><span class="hero__title--muted">через<br>привычные карты</span>
+      </h1>
+      <button class="cta-pill cta-pill--dark">
+        <span>Заказать карту</span>
+        <img src="https://www.figma.com/api/mcp/asset/11ef3764-e1e2-4f54-9513-a55894f894e4" alt="" class="cta-pill__icon" width="32" height="32">
+      </button>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Бесплатный выпуск</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">0% комиссий</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">30 HUMO Token за активацию</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">Бесплатный выпуск</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">0% комиссий</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">30 HUMO Token за активацию</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">Бесплатный выпуск</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">0% комиссий</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">30 HUMO Token за активацию</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">Бесплатный выпуск</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">0% комиссий</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">30 HUMO Token за активацию</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">Бесплатный выпуск</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">0% комиссий</span>
+        <span class="marquee__sep">+</span>
+        <span class="marquee__item">30 HUMO Token за активацию</span>
+        <span class="marquee__sep">+</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== STATS BAR ===== -->
-  <section class="stats">
-    <div class="container stats__inner">
-      <div class="stats__item">
-        <span class="stats__number">50 000+</span>
-        <span class="stats__label">Пользователей</span>
-      </div>
-      <div class="stats__divider"></div>
-      <div class="stats__item">
-        <span class="stats__number">120+</span>
-        <span class="stats__label">Стран</span>
-      </div>
-      <div class="stats__divider"></div>
-      <div class="stats__item">
-        <span class="stats__number">$2 млрд+</span>
-        <span class="stats__label">Транзакций</span>
-      </div>
-      <div class="stats__divider"></div>
-      <div class="stats__item">
-        <span class="stats__number">3 года</span>
-        <span class="stats__label">На рынке</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== FEATURES ===== -->
-  <section class="features" id="features">
-    <div class="container features__inner">
-      <div class="features__visual">
-        <div class="features__phones">
-          <div class="features__phone features__phone--back">
-            <div class="phone-screen phone-screen--dark">
-              <div class="phone-screen__tx-list">
-                <div class="tx-item">
-                  <span class="tx-item__icon">☕</span>
-                  <span class="tx-item__name">Кофейня</span>
-                  <span class="tx-item__amount">−$4.20</span>
-                </div>
-                <div class="tx-item">
-                  <span class="tx-item__icon">🛒</span>
-                  <span class="tx-item__name">Супермаркет</span>
-                  <span class="tx-item__amount">−$38.50</span>
-                </div>
-                <div class="tx-item">
-                  <span class="tx-item__icon">✈️</span>
-                  <span class="tx-item__name">Авиабилеты</span>
-                  <span class="tx-item__amount">−$320.00</span>
-                </div>
-                <div class="tx-item">
-                  <span class="tx-item__icon">💰</span>
-                  <span class="tx-item__name">Пополнение</span>
-                  <span class="tx-item__amount tx-item__amount--pos">+$1,000</span>
-                </div>
-              </div>
-            </div>
+  <!-- ═══════════════════════════════
+       SECONDARY (white wrapper)
+  ═══════════════════════════════ -->
+  <div class="s-secondary">
+
+    <!-- BENEFIT CARDS -->
+    <section class="s-bcards" id="benefits">
+      <div class="bcards__row">
+
+        <div class="bcard bcard--gray">
+          <div class="bcard__body">
+            <p class="bcard__title">0% комиссии</p>
+            <p class="bcard__text">при переводе с крипто-кошелька на карту</p>
           </div>
-          <div class="features__phone features__phone--front">
-            <div class="phone-screen">
-              <div class="phone-screen__qr-title">Получить оплату</div>
-              <div class="phone-screen__qr-box">
-                <div class="qr-placeholder">
-                  <div class="qr-inner"></div>
-                </div>
-              </div>
-              <div class="phone-screen__qr-addr">0x4F2...a91B</div>
-            </div>
+          <div class="bcard__footer">
+            <p class="bcard__sub">0% за повседневные<br>безналичные платежи</p>
           </div>
-        </div>
-      </div>
-
-      <div class="features__content">
-        <p class="section-label">О сервисе</p>
-        <h2 class="section-title">Используйте свои криптоактивы</h2>
-        <p class="section-desc">
-          Asterium даёт возможность тратить криптовалюту так же легко, как обычные деньги — в магазинах, ресторанах и онлайн по всему миру.
-        </p>
-        <ul class="features__list">
-          <li class="features__list-item">
-            <span class="features__list-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <strong>Мгновенные транзакции</strong>
-              <p>Платежи подтверждаются за секунды без задержек</p>
-            </div>
-          </li>
-          <li class="features__list-item">
-            <span class="features__list-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <strong>Поддержка 50+ криптовалют</strong>
-              <p>BTC, ETH, USDT, SOL и многие другие</p>
-            </div>
-          </li>
-          <li class="features__list-item">
-            <span class="features__list-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <strong>Без скрытых комиссий</strong>
-              <p>Прозрачные тарифы, никаких сюрпризов</p>
-            </div>
-          </li>
-          <li class="features__list-item">
-            <span class="features__list-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <strong>Cashback в крипте</strong>
-              <p>Получайте до 2% кэшбэк с каждой покупки</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== STEPS ===== -->
-  <section class="steps" id="steps">
-    <div class="container">
-      <p class="section-label section-label--light">Как начать</p>
-      <h2 class="section-title section-title--light">Пройдите путь</h2>
-      <p class="section-desc section-desc--light">
-        Три простых шага — и вы уже тратите крипту в реальном мире
-      </p>
-
-      <div class="steps__grid">
-        <div class="steps__item">
-          <div class="steps__num">01</div>
-          <div class="steps__phone-wrap">
-            <div class="steps__phone">
-              <div class="phone-screen phone-screen--dark">
-                <div class="step-screen step-screen--register">
-                  <div class="step-screen__icon">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="7" stroke="#C8FF00" stroke-width="2"/><path d="M6 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/></svg>
-                  </div>
-                  <p>Создайте аккаунт<br/>за 2 минуты</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h3 class="steps__title">Регистрация</h3>
-          <p class="steps__desc">Создайте аккаунт по email или телефону. Верификация KYC — быстро и безопасно.</p>
+          <img src="https://www.figma.com/api/mcp/asset/28288884-8d52-4a52-a889-5d41d0706568" alt="" class="bcard__img bcard__img--1">
         </div>
 
-        <div class="steps__item">
-          <div class="steps__num">02</div>
-          <div class="steps__phone-wrap">
-            <div class="steps__phone">
-              <div class="phone-screen phone-screen--dark">
-                <div class="step-screen step-screen--deposit">
-                  <div class="step-screen__icon">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="20" rx="3" stroke="#C8FF00" stroke-width="2"/><path d="M6 16h28" stroke="#C8FF00" stroke-width="2"/><circle cx="12" cy="24" r="2" fill="#C8FF00"/></svg>
-                  </div>
-                  <p>Пополните<br/>кошелёк</p>
-                </div>
-              </div>
-            </div>
+        <div class="bcard bcard--lime" id="bonus">
+          <img src="https://www.figma.com/api/mcp/asset/dfa6211c-13e0-4754-b67a-6367f0da34f2" alt="" class="bcard__img bcard__img--2">
+          <div class="bcard__body">
+            <p class="bcard__title">Бесплатно</p>
+            <p class="bcard__text">выпуск карты в период акции</p>
           </div>
-          <h3 class="steps__title">Пополнение</h3>
-          <p class="steps__desc">Переведите криптовалюту на ваш кошелёк Asterium. Поддерживаем все основные сети.</p>
+          <div class="bcard__footer">
+            <p class="bcard__sub">Экономьте на старте<br>и начните сегодня</p>
+          </div>
         </div>
 
-        <div class="steps__item">
-          <div class="steps__num">03</div>
-          <div class="steps__phone-wrap">
-            <div class="steps__phone">
-              <div class="phone-screen phone-screen--dark">
-                <div class="step-screen step-screen--pay">
-                  <div class="step-screen__icon">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M10 20h20M24 14l6 6-6 6" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </div>
-                  <p>Платите<br/>везде</p>
-                </div>
-              </div>
-            </div>
+        <div class="bcard bcard--gray">
+          <div class="bcard__body">
+            <p class="bcard__title">30 000 сум</p>
+            <p class="bcard__text">велком-бонус за первый платёж</p>
           </div>
-          <h3 class="steps__title">Оплата</h3>
-          <p class="steps__desc">Используйте виртуальную или физическую карту для оплаты в любой точке мира.</p>
+          <img src="https://www.figma.com/api/mcp/asset/c467e8f1-8665-46b4-95c4-2ae3b8543a96" alt="" class="bcard__img bcard__img--3">
+          <div class="bcard__footer">
+            <p class="bcard__sub bcard__sub--link">Начисляется в <u>HUMO Token</u><br>(обеспечен гос. облигациями РУз)</p>
+          </div>
         </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== CARD SHOWCASE ===== -->
-  <section class="card-section" id="card">
-    <div class="container">
-      <div class="card-section__head">
-        <div>
-          <p class="section-label">Продукт</p>
-          <h2 class="section-title">Криптокарта под<br />ваши задачи</h2>
-        </div>
-        <div class="card-section__nav">
-          <button class="carousel-btn carousel-btn--prev" id="card-prev" aria-label="Назад">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="carousel-btn carousel-btn--next" id="card-next" aria-label="Вперёд">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
-      </div>
 
-      <div class="carousel" id="card-carousel">
-        <div class="carousel__track" id="card-track">
-
-          <div class="carousel__slide">
-            <div class="card-showcase">
-              <div class="card-3d card-3d--black">
-                <div class="card-3d__chip"></div>
-                <div class="card-3d__logo">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
-                  ASTERIUM
-                </div>
-                <div class="card-3d__number">•••• •••• •••• 4821</div>
-                <div class="card-3d__bottom">
-                  <span>VIRTUAL</span>
-                  <span>VISA</span>
-                </div>
-              </div>
-              <div class="card-showcase__info">
-                <h3>Виртуальная карта</h3>
-                <p>Мгновенный выпуск. Используйте для онлайн-покупок уже через минуту после регистрации.</p>
-                <ul class="card-showcase__features">
-                  <li>Бесплатный выпуск</li>
-                  <li>Доступна сразу</li>
-                  <li>Apple Pay / Google Pay</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel__slide">
-            <div class="card-showcase">
-              <div class="card-3d card-3d--gradient">
-                <div class="card-3d__chip"></div>
-                <div class="card-3d__logo">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
-                  ASTERIUM
-                </div>
-                <div class="card-3d__number">•••• •••• •••• 9912</div>
-                <div class="card-3d__bottom">
-                  <span>PREMIUM</span>
-                  <span>MASTERCARD</span>
-                </div>
-              </div>
-              <div class="card-showcase__info">
-                <h3>Премиум карта</h3>
-                <p>Физическая металлическая карта с кэшбэком до 2% и приоритетной поддержкой 24/7.</p>
-                <ul class="card-showcase__features">
-                  <li>Металл, доставка 5 дней</li>
-                  <li>2% кэшбэк в крипте</li>
-                  <li>Приоритетная поддержка</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel__slide">
-            <div class="card-showcase">
-              <div class="card-3d card-3d--dark">
-                <div class="card-3d__chip"></div>
-                <div class="card-3d__logo">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#111"/></svg>
-                  ASTERIUM
-                </div>
-                <div class="card-3d__number">•••• •••• •••• 3307</div>
-                <div class="card-3d__bottom">
-                  <span>BUSINESS</span>
-                  <span>VISA</span>
-                </div>
-              </div>
-              <div class="card-showcase__info">
-                <h3>Бизнес карта</h3>
-                <p>Корпоративное решение: несколько карт, лимиты, отчётность и интеграция с бухгалтерией.</p>
-                <ul class="card-showcase__features">
-                  <li>До 20 карт на команду</li>
-                  <li>Расширенная аналитика</li>
-                  <li>Экспорт в 1С/Excel</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="carousel__dots" id="card-dots">
-        <button class="carousel__dot active" data-index="0"></button>
-        <button class="carousel__dot" data-index="1"></button>
-        <button class="carousel__dot" data-index="2"></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECURITY ===== -->
-  <section class="security" id="security">
-    <div class="container">
-      <div class="security__head">
-        <p class="section-label">Защита</p>
-        <h2 class="section-title">Безопасность</h2>
-        <p class="section-desc">
-          Ваши средства под многоуровневой защитой. Мы используем лучшие в индустрии технологии безопасности.
-        </p>
-      </div>
-
-      <div class="security__grid">
-        <div class="security__item">
-          <div class="security__icon">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
-              <path d="M28 12L14 18v10c0 8.284 5.946 16.03 14 18 8.054-1.97 14-9.716 14-18V18L28 12z" stroke="#C8FF00" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M22 28l4 4 8-8" stroke="#C8FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="security__title">Шифрование данных</h3>
-          <p class="security__desc">AES-256 шифрование для всех персональных данных и транзакций</p>
-        </div>
-
-        <div class="security__item">
-          <div class="security__icon">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
-              <circle cx="28" cy="22" r="7" stroke="#C8FF00" stroke-width="2"/>
-              <path d="M14 42c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="38" cy="18" r="4" fill="#C8FF00"/>
-              <path d="M36 18l1.5 1.5L40 16" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="security__title">Биометрия и 2FA</h3>
-          <p class="security__desc">Face ID, Touch ID и двухфакторная аутентификация для каждого входа</p>
-        </div>
-
-        <div class="security__item">
-          <div class="security__icon">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
-              <rect x="14" y="20" width="28" height="20" rx="3" stroke="#C8FF00" stroke-width="2"/>
-              <path d="M14 28h28" stroke="#C8FF00" stroke-width="2"/>
-              <rect x="18" y="32" width="6" height="4" rx="1" fill="#C8FF00"/>
-              <path d="M28 14v6M22 14v3M34 14v3" stroke="#C8FF00" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="security__title">Холодное хранение</h3>
-          <p class="security__desc">95% активов хранятся в cold storage, недоступном для взлома онлайн</p>
-        </div>
-
-        <div class="security__item">
-          <div class="security__icon">
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="56" height="56" rx="16" fill="#F5F5F5"/>
-              <path d="M22 28c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z" stroke="#C8FF00" stroke-width="2"/>
-              <path d="M14 28c0-7.732 6.268-14 14-14s14 6.268 14 14-6.268 14-14 14S14 35.732 14 28z" stroke="#C8FF00" stroke-width="2" stroke-dasharray="4 3"/>
-              <circle cx="28" cy="28" r="2" fill="#C8FF00"/>
-            </svg>
-          </div>
-          <h3 class="security__title">Мониторинг 24/7</h3>
-          <p class="security__desc">Системы обнаружения мошенничества отслеживают транзакции в реальном времени</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="faq__inner">
-        <div class="faq__head">
-          <p class="section-label">Поддержка</p>
-          <h2 class="section-title">Частые вопросы</h2>
-          <p class="section-desc">Не нашли ответ? Напишите нам в поддержку</p>
-          <a href="mailto:support@asterium.io" class="btn btn--outline">Написать в поддержку</a>
-        </div>
-
-        <div class="faq__list">
-          <div class="faq__item">
-            <button class="faq__question">
-              Как быстро я могу получить карту?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>Виртуальная карта доступна сразу после прохождения верификации — это занимает около 2-5 минут. Физическая карта доставляется в течение 5–7 рабочих дней по всему миру.</p>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__question">
-              Какие криптовалюты поддерживаются?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>Мы поддерживаем более 50 криптовалют, включая Bitcoin (BTC), Ethereum (ETH), USDT, USDC, Solana (SOL), BNB, и многие другие. Полный список доступен в приложении.</p>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__question">
-              Безопасно ли хранить крипту в Asterium?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>Да. Мы используем институциональный уровень безопасности: 95% активов хранятся в cold storage, все данные шифруются по стандарту AES-256, а каждая операция проходит многоуровневую проверку.</p>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__question">
-              Какие комиссии взимает Asterium?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>Комиссия за покупки по карте составляет 0.5% в рамках базового тарифа. Пополнение счёта — от 0% (зависит от сети). Детальные тарифы доступны на странице Pricing.</p>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__question">
-              В каких странах доступен сервис?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>Asterium доступен в 120+ странах мира. Карта принимается везде, где работает Visa или Mastercard. Список стран, где доступна регистрация, постоянно расширяется.</p>
-            </div>
-          </div>
-
-          <div class="faq__item">
-            <button class="faq__question">
-              Как работает кэшбэк?
-              <span class="faq__icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </button>
-            <div class="faq__answer">
-              <p>При каждой покупке по карте начисляется кэшбэк в крипте — от 0.5% до 2% в зависимости от тарифа. Кэшбэк поступает на ваш кошелёк Asterium автоматически.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="cta-section" id="cta">
-    <div class="container cta-section__inner">
-      <div class="cta-section__glow cta-section__glow--left"></div>
-      <div class="cta-section__glow cta-section__glow--right"></div>
-      <div class="cta-section__content">
-        <h2 class="cta-section__title">
-          Начните пользоваться<br />
-          криптоактивами уже сегодня
+    <!-- FEATURE SECTION -->
+    <section class="s-feat">
+      <div class="feat__header">
+        <p class="sec__label">Ваши криптоактивы — в реальной жизни</p>
+        <h2 class="sec__title">
+          Используйте свои<br>криптоактивы<br><span class="text-muted">в реальной жизни</span>
         </h2>
-        <p class="cta-section__desc">
-          Присоединяйтесь к 50 000+ пользователям, которые уже платят криптой как обычными деньгами
-        </p>
-        <div class="cta-section__actions">
-          <a href="#" class="btn btn--primary btn--lg">Получить карту бесплатно</a>
-        </div>
       </div>
-    </div>
-  </section>
+      <div class="feat__panels">
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="#" class="header__logo">
-            <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L30 28H2L16 2Z" fill="#C8FF00"/><path d="M16 10L24 26H8L16 10Z" fill="#0D0D0D"/></svg>
-            <span class="logo-text">ASTERIUM</span>
-          </a>
-          <p class="footer__brand-desc">
-            Первый сервис криптокарт, позволяющий тратить цифровые активы в реальном мире
-          </p>
+        <div class="feat__panel feat__panel--side">
+          <img src="https://www.figma.com/api/mcp/asset/8f7a4833-686a-4bd7-ac07-eead814011b9" alt="" class="feat__panel-img">
         </div>
 
-        <div class="footer__cols">
-          <div class="footer__col">
-            <h4 class="footer__col-title">Продукт</h4>
-            <ul>
-              <li><a href="#">Виртуальная карта</a></li>
-              <li><a href="#">Физическая карта</a></li>
-              <li><a href="#">Бизнес решения</a></li>
-              <li><a href="#">Тарифы</a></li>
-            </ul>
+        <div class="feat__panel feat__panel--mid">
+          <div class="feat__panel-imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/06922cf4-0533-46a5-afc3-da2415f094bd" alt="" class="feat__panel-img">
+            <div class="feat__panel-fade"></div>
           </div>
-          <div class="footer__col">
-            <h4 class="footer__col-title">Компания</h4>
-            <ul>
-              <li><a href="#">О нас</a></li>
-              <li><a href="#">Блог</a></li>
-              <li><a href="#">Карьера</a></li>
-              <li><a href="#">Партнёрам</a></li>
-            </ul>
+          <p class="feat__panel-label">Visa и Mastercard — по всему миру</p>
+          <p class="feat__panel-sub feat__panel-sub--right">HUMO — для ежедневных трат в Узбекистане</p>
+        </div>
+
+        <div class="feat__panel feat__panel--center">
+          <div class="feat__panel-imgwrap feat__panel-imgwrap--dark">
+            <img src="https://www.figma.com/api/mcp/asset/eb3c43a5-1b55-4702-9dc0-ee89728ded25" alt="" class="feat__panel-img feat__panel-img--offset">
+            <div class="feat__panel-fade feat__panel-fade--dark"></div>
           </div>
-          <div class="footer__col">
-            <h4 class="footer__col-title">Поддержка</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Документация</a></li>
-              <li><a href="#">Статус системы</a></li>
-              <li><a href="mailto:support@asterium.io">Написать нам</a></li>
-            </ul>
+          <p class="feat__panel-label feat__panel-label--white">Магазины, кафе, онлайн</p>
+          <p class="feat__panel-sub feat__panel-sub--white">Как обычной картой — везде где принимают Visa, Mastercard и HUMO</p>
+          <button class="feat__arrow feat__arrow--prev" id="featPrev" aria-label="Назад">
+            <img src="https://www.figma.com/api/mcp/asset/6044640a-ac57-48d6-87ae-a9c49d322d5a" alt="" width="50" height="50">
+          </button>
+          <button class="feat__arrow feat__arrow--next" id="featNext" aria-label="Вперёд">
+            <img src="https://www.figma.com/api/mcp/asset/58e62070-edf1-4494-8831-60a22a1ff417" alt="" width="50" height="50">
+          </button>
+          <div class="feat__dots" id="featDots">
+            <span class="feat__dot feat__dot--on"></span>
+            <span class="feat__dot"></span>
+            <span class="feat__dot"></span>
           </div>
         </div>
-      </div>
 
-      <div class="footer__logo-big">
-        <span>ASTERIUM</span>
-      </div>
-
-      <div class="footer__bottom">
-        <span>© 2024 Asterium. Все права защищены.</span>
-        <div class="footer__legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Условия использования</a>
-          <a href="#">Cookies</a>
+        <div class="feat__panel feat__panel--mid">
+          <div class="feat__panel-imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/7d93bd77-8370-4b32-876f-85400b42fc62" alt="" class="feat__panel-img">
+            <div class="feat__panel-fade"></div>
+          </div>
+          <p class="feat__panel-label">Цифровая карта — за минуты</p>
+          <p class="feat__panel-sub">Физическая — по желанию, доставка на адрес</p>
         </div>
+
+        <div class="feat__panel feat__panel--side">
+          <img src="https://www.figma.com/api/mcp/asset/8f7a4833-686a-4bd7-ac07-eead814011b9" alt="" class="feat__panel-img feat__panel-img--flip">
+        </div>
+
       </div>
-    </div>
-  </footer>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="s-steps">
+      <div class="sec__header">
+        <p class="sec__label">КАК ЭТО РАБОТАЕТ</p>
+        <h2 class="sec__title">
+          Пройдите путь<br><span class="text-muted">получите награду</span>
+        </h2>
+      </div>
+      <div class="steps__grid">
+
+        <div class="step__main">
+          <img src="https://www.figma.com/api/mcp/asset/65583320-8a70-4d3a-9623-94879395a45c" alt="" class="step__img">
+          <div class="step__info">
+            <div class="step__texts" id="stepTitles">
+              <p class="step__title">Скачать приложение</p>
+              <p class="step__sub">Создайте учетную запись</p>
+            </div>
+            <div class="step__badge" id="stepNum">01</div>
+          </div>
+        </div>
+
+        <div class="steps__pills">
+          <div class="step__pill active" data-step="1">
+            <div class="step__pill-badge">02</div>
+          </div>
+          <div class="step__pill" data-step="2">
+            <div class="step__pill-badge">03</div>
+          </div>
+          <div class="step__pill" data-step="3">
+            <div class="step__pill-badge">04</div>
+          </div>
+          <div class="step__pill" data-step="4">
+            <div class="step__pill-badge">05</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CARDS CAROUSEL -->
+    <section class="s-cards" id="s-cards">
+      <p class="sec__label">ВЫБЕРИТЕ КАРТУ</p>
+      <h2 class="sec__title sec__title--center">
+        Криптокарта под<br><span class="text-muted">ваш сценарий</span>
+      </h2>
+
+      <p class="cards__name" id="cardsName">HUMO Daily</p>
+
+      <div class="cards__fan" id="cardsFan">
+        <img src="https://www.figma.com/api/mcp/asset/bf1264f3-e264-4058-be96-da7c27304514" alt="HUMO Daily" class="crd crd--left">
+        <img src="https://www.figma.com/api/mcp/asset/39cd5125-99e8-4800-aae9-693270e32fd2" alt="Asterium Crypto" class="crd crd--center">
+        <img src="https://www.figma.com/api/mcp/asset/70faa126-7093-4785-a744-77e536390af9" alt="Visa Platinum" class="crd crd--right">
+      </div>
+
+      <div class="cards__nav-row">
+        <button class="cards__arrow" id="cardPrev" aria-label="Предыдущая карта">
+          <img src="https://www.figma.com/api/mcp/asset/b3e8fb09-de0d-4cd6-b7b3-922ab9f16626" alt="" width="32" height="32">
+        </button>
+        <div class="cards__tags" id="cardsTags">
+          <span class="ctag ctag--filled">Для жизни в Узбекистане</span>
+          <span class="ctag">Повседневные платежи</span>
+          <span class="ctag">Локальные пополнения</span>
+          <span class="ctag">Привычный формат</span>
+        </div>
+        <button class="cards__arrow" id="cardNext" aria-label="Следующая карта">
+          <img src="https://www.figma.com/api/mcp/asset/5c8851ba-f192-4fe1-9515-1f2dbb186be9" alt="" width="32" height="32">
+        </button>
+      </div>
+
+      <button class="cta-pill cta-pill--dark cards__cta">
+        <span>Заказать карту</span>
+        <img src="https://www.figma.com/api/mcp/asset/a161e284-e12d-45bd-867e-bc59277b7a2f" alt="" class="cta-pill__icon" width="32" height="32">
+      </button>
+    </section>
+
+
+    <!-- SECURITY -->
+    <section class="s-security" id="security">
+      <div class="sec__header">
+        <p class="sec__label">СПОКОЙНО. ЛЕГАЛЬНО. ПОД КОНТРОЛЕМ</p>
+        <h2 class="sec__title">
+          Безопасность<br><span class="text-muted">на каждом уровне</span>
+        </h2>
+      </div>
+      <div class="security__grid">
+
+        <div class="sec-card">
+          <div class="sec-card__imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/773a791e-7f0e-440f-91e2-0a5918a22729" alt="" class="sec-card__img">
+          </div>
+          <div class="sec-card__body">
+            <p class="sec-card__num">01</p>
+            <p class="sec-card__title">Официальная лицензия</p>
+            <p class="sec-card__text">Asterium — лицензированная крипто-экосистема. Вы можете в любой момент ознакомиться с лицензией и регуляторными документами.</p>
+          </div>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-card__imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/ea7efa94-8d06-4b78-91b5-3b16a51b05e8" alt="" class="sec-card__img">
+          </div>
+          <div class="sec-card__body">
+            <p class="sec-card__num">02</p>
+            <p class="sec-card__title">Полная проверка пользователей (KYC/AML)</p>
+            <p class="sec-card__text">Обязательные процедуры идентификации и проверки операций. Это защищает ваши средства и соответствует международным стандартам.</p>
+          </div>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-card__imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/999f8b2e-ecfd-4cfc-b835-0ceb3ecd5ce8" alt="" class="sec-card__img">
+          </div>
+          <div class="sec-card__body">
+            <p class="sec-card__num">03</p>
+            <p class="sec-card__title">Международные и локальные платёжные системы</p>
+            <p class="sec-card__text">HUMO / Visa / Mastercard. Оплачивайте покупки как локально, так и по всему миру в привычной платёжной инфраструктуре.</p>
+          </div>
+        </div>
+
+        <div class="sec-card">
+          <div class="sec-card__imgwrap">
+            <img src="https://www.figma.com/api/mcp/asset/ab689596-c152-465a-9c35-57171afa7632" alt="" class="sec-card__img">
+          </div>
+          <div class="sec-card__body">
+            <p class="sec-card__num">04</p>
+            <p class="sec-card__title">Прозрачные правила и условия</p>
+            <p class="sec-card__text">Все комиссии, ограничения и правила использования открыто описаны и зафиксированы в публичной оферте.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="s-faq">
+      <div class="sec__header sec__header--center">
+        <p class="sec__label">ВОПРОСЫ И ОТВЕТЫ</p>
+        <h2 class="sec__title">Частые вопросы</h2>
+      </div>
+      <div class="faq__list">
+
+        <div class="faq-item faq-item--open">
+          <div class="faq-q">
+            <span>Легально ли это?</span>
+            <img src="https://www.figma.com/api/mcp/asset/a8cf16f8-548a-4329-852c-eb517f6c8dfe" alt="" class="faq-q__icon">
+          </div>
+          <div class="faq-a">
+            <p>Да, в Узбекистане криптовалюты легальны. Правительство страны активно работает над созданием нормативной базы для регулирования криптоиндустрии, что позволяет гражданам безопасно инвестировать и использовать цифровые валюты.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Есть ли скрытые комиссии?</span>
+            <img src="https://www.figma.com/api/mcp/asset/a8cf16f8-548a-4329-852c-eb517f6c8dfe" alt="" class="faq-q__icon">
+          </div>
+          <div class="faq-a">
+            <p>Нет, все комиссии прозрачно указаны в публичной оферте. Вы всегда знаете, сколько платите.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Можно ли получить бонус за несколько карт?</span>
+            <img src="https://www.figma.com/api/mcp/asset/a8cf16f8-548a-4329-852c-eb517f6c8dfe" alt="" class="faq-q__icon">
+          </div>
+          <div class="faq-a">
+            <p>Велком-бонус начисляется один раз — при первом платеже. Подробные условия указаны в оферте.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Когда начисляется вознаграждение?</span>
+            <img src="https://www.figma.com/api/mcp/asset/a8cf16f8-548a-4329-852c-eb517f6c8dfe" alt="" class="faq-q__icon">
+          </div>
+          <div class="faq-a">
+            <p>Вознаграждение начисляется после первого успешного платежа в течение 24 часов.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /s-secondary -->
+
+
+  <!-- ═══════════════════════════════
+       FINAL CTA + FOOTER
+  ═══════════════════════════════ -->
+  <div class="s-final">
+
+    <section class="s-cta">
+      <div class="cta__inner">
+        <h2 class="cta__title">Начните пользоваться<br>криптокартой уже сегодня</h2>
+        <p class="cta__sub">Без лишних шагов. Под вашим контролем.</p>
+        <button class="cta-pill cta-pill--lime">
+          <span>Заказать карту</span>
+          <img src="https://www.figma.com/api/mcp/asset/be35475d-eb12-4b34-8715-2a1e95ef1b9b" alt="" class="cta-pill__icon" width="32" height="32">
+        </button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content">
+
+        <div class="footer__top">
+          <div class="footer__nav">
+            <p class="footer__tagline">Криптоактивы через привычные карты</p>
+            <a href="#about">О нас</a>
+            <a href="#benefits">Преимущества</a>
+            <a href="#bonus">Бонус</a>
+            <a href="#s-cards">Карты</a>
+            <a href="#security">Безопасность</a>
+          </div>
+          <div class="footer__contacts">
+            <p>Said Baraka 12A, Tashkent, Uzbekistan</p>
+            <p>support@asterium.uz</p>
+            <p>+998 (78) 777 - 55 - 58</p>
+          </div>
+        </div>
+
+        <div class="footer__logo-block">
+          <img src="https://www.figma.com/api/mcp/asset/67291540-da4a-4073-badd-31de7d22d6ce" alt="ASTERIUM" class="footer__logo-svg">
+          <p class="footer__app-label">Скачать Asterium</p>
+          <div class="footer__app-row">
+            <a href="#" class="footer__app-btn">
+              <img src="https://www.figma.com/api/mcp/asset/a9fbf220-a2d5-4edc-a6f2-999dcb1d7064" alt="" width="24" height="24">
+              <span>Apple</span>
+            </a>
+            <a href="#" class="footer__app-btn">
+              <img src="https://www.figma.com/api/mcp/asset/31ab3885-b200-46d3-9555-380db81998a1" alt="" width="24" height="24">
+              <span>Android</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© Asterium 2026</p>
+          <div class="footer__legal">
+            <a href="#">Публичная оферта</a>
+            <a href="#">Правила использования</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
